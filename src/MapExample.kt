@@ -15,13 +15,17 @@ fun arvo(pisteet: Double): Int {
 
     if (pisteet !in 40.0 .. 100.0) return 0
 
-    val arvosana = 0.5 + (pisteet - 40) * 4.99 / 60
+    val arvosana = 0.5 + (pisteet - 40.0) * 4.99 / 60
     return arvosana.roundToInt()
-
 }
 
-fun teeGrade(alaraja: Double) {
+fun teeGrade(alaraja: Double): (pisteet: Double) -> Int {
 
+    val f = { pisteet: Double ->
+        val arvosana = 0.5 + (pisteet - alaraja) * 4.99 / (alaraja + pisteet)
+        arvosana.roundToInt()
+    }
+    return f
 }
 
 // (pisteet: Double) -> Int
@@ -31,4 +35,6 @@ fun main() {
     // println(s)
 
     println(arvo(40.0))
+
+    println(teeGrade(30.0))
 }
