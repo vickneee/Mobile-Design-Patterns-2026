@@ -14,6 +14,12 @@ fun arvo(n: Int, alue: IntRange): List<Int>? {
     return alue.shuffled().take(n).sorted()
 }
 
+fun laillinen(rivi: List<Int>, n: Int, alue: IntRange) = rivi.all { it in alue } && rivi.toSet().size == n
+
+fun tarkista(secret: List<Int>, guess: List<Int>): List<Int>? {
+    return null
+}
+
 fun main() {
 
     println(arvo(7, 1 .. 20))
