@@ -26,5 +26,13 @@ fun main() {
 
     println(arvo(7, 1 .. 20))
 
+    val secret = (0..40).shuffled().take(7)
 
+    println("Arvottu rivi: $secret")
+    var n = 0
+    while (true) {
+        val guess = (1 .. 40).shuffled().take(7)
+        n++
+        guess.intersect(guess.toSet())
+    }
 }
