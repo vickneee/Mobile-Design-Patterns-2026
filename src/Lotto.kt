@@ -3,19 +3,18 @@ import kotlin.uuid.Uuid.Companion.random
 fun arvo(n: Int, alue: IntRange): List<Int>? {
     if (n < 0 || alue.count() < n) return null
 
-    val numerot: MutableList<Int> = mutableListOf()
+//    val numerot: MutableSet<Int> = mutableSetOf()
+//
+//    while (numerot.size < n) {
+//        numerot.add(alue.random())
+//    }
 
-    while (numerot.size < n) {
-        val uusiNumero = alue.random()
-        if (uusiNumero !in numerot) {
-            numerot.add(uusiNumero)
-        }
-    }
+//    return numerot.sorted()
 
-    return numerot
+    return alue.shuffled().take(n).sorted()
 }
 
 fun main() {
 
-    println(arvo(34, 1 .. 20))
+    println(arvo(7, 1 .. 20))
 }
