@@ -24,6 +24,8 @@ fun teeGrade(alaraja: Double) {
 
 }
 
+// (pisteet: Double) -> Int
+
 fun main() {
     // val s = mapExample(listOf("Abba", "Ace Of Base", "Metallica")) { s: String -> s.reversed() }
     // println(s)
