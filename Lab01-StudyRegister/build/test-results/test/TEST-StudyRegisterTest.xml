@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="StudyRegisterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-01-28T10:37:18.097Z" hostname="Victorias-Mac.local" time="0.025">
+<testsuite name="StudyRegisterTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-01-28T12:44:04.952Z" hostname="Victorias-Mac.local" time="0.021">
   <properties/>
-  <testcase name="testHuman()" classname="StudyRegisterTest" time="0.006"/>
-  <testcase name="testMajor()" classname="StudyRegisterTest" time="0.016"/>
-  <testcase name="testAverage()" classname="StudyRegisterTest" time="0.0"/>
+  <testcase name="testHuman()" classname="StudyRegisterTest" time="0.007"/>
+  <testcase name="testMajor()" classname="StudyRegisterTest" time="0.011"/>
+  <testcase name="testAverage()" classname="StudyRegisterTest" time="0.001"/>
   <testcase name="testMinMax()" classname="StudyRegisterTest" time="0.001"/>
-  <system-out><![CDATA[Enzio Benzino courses: [CourseRecord(name=Kotlin basics, yearCompleted=2023, credits=5, grade=5.0)]
-Enzio Benzino weightedAverage: 2.769230769230769
-Abebe Bikila courses: [CourseRecord(name=Kotlin basics, yearCompleted=2023, credits=5, grade=2.0)]
-Abebe Bikila weightedAverage: 2.0
-Günther Radulic courses: [CourseRecord(name=Kotlin basics, yearCompleted=2023, credits=5, grade=4.0), CourseRecord(name=Kotlin advanced, yearCompleted=2023, credits=5, grade=5.0)]
-Günther Radulic weightedAverage: 4.5
-]]></system-out>
+  <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

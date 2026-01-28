@@ -21,15 +21,15 @@ class Major(val name: String) {
 
     // Stats for a specific course
     fun stats(courseName: String): Triple<Double, Double, Double> {
-        // Students who have taken the course
-        val participants = students.filter { it.coursesByName(courseName).isNotEmpty() }
-
-        val minAvg = participants.minOfOrNull { it.weightedAverage() } ?: 0.0
-        val maxAvg = participants.maxOfOrNull { it.weightedAverage() } ?: 0.0
-
-        val courseRecords = participants.flatMap { it.coursesByName(courseName) }
-        val courseAverage = if (courseRecords.isEmpty()) 0.0 else courseRecords.map { it.grade }.average()
-
-        return Triple(minAvg, maxAvg, courseAverage)
+        val averages = students.mapNotNull { student ->
+            val courseGrades = student.coursesByName(courseName)
+            if (courseGrades.isEmpty()) null
+            else courseGrades.sumOf { it.grade * it.credits } / courseGrades.sumOf { it.credits }
+        }
+        return Triple(
+            averages.minOrNull() ?: 0.0,
+            averages.maxOrNull() ?: 0.0,
+            averages.average()
+        )
     }
 }

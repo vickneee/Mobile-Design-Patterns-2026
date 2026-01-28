@@ -55,19 +55,13 @@ internal class StudyRegisterTest {
         major.addStudent(student)
         }
 
-        // Debug
-        for (s in students) {
-            println("${s.name} courses: ${s.coursesByName("Kotlin basics") + s.coursesByName("Kotlin advanced")}")
-            println("${s.name} weightedAverage: ${s.weightedAverage()}")
-        }
-
         val (majorMin, majorMax, majorAverage) = major.stats()
         assertEquals(2.0, majorMin, 0.001)
         assertEquals(4.5, majorMax, 0.001)
         assertEquals(3.0897, majorAverage, 0.001)
         val (majorMin2, majorMax2, majorAverage2) = major.stats("Kotlin basics")
         assertEquals(2.0, majorMin2, 0.001)
-        assertEquals(4.5, majorMax2, 0.001)
+        assertEquals(5.0, majorMax2, 0.001)
         assertEquals(3.6666, majorAverage2, 0.001)
     }
 }
