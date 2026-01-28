@@ -7,6 +7,5 @@ open class Human(val name: String, initialAge: Int) {
     fun getOlder() {
         age++
     }
-
 }
 

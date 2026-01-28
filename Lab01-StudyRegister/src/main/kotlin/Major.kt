@@ -8,7 +8,7 @@ class Major(val name: String) {
         students.add(student)
     }
 
-    // Overall stats using students' weighted averages
+    // Overall stats using students weighted averages
     fun stats(): Triple<Double, Double, Double> {
         val averages = students.map { it.weightedAverage() }
 
