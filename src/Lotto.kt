@@ -29,14 +29,19 @@ fun main() {
 
     println("Arvottu rivi: $secret")
 
-    val guess = arvo(7, 1..40)   // your chosen numbers
-    println("Oma rivi: $guess")
+    var n = 0
 
-    val result = tarkista(secret, guess)
+    while (true) {
+        val guess = arvo(7, 1..40)   // your chosen numbers
+        n++
 
-    if (result != null) {
-        println("Oikeita numeroita: $result")
-    } else {
-        println("Virheellinen rivi")
+        val result = tarkista(secret, guess)
+
+        if (result == 7) {
+            println("Oikea rivi löytyi!")
+            println("Yrityksiä: $n")
+            println("Rivi: $guess")
+            break
+        }
     }
 }
