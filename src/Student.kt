@@ -6,6 +6,9 @@ class Student {
     // Computed property
     val grades: List<Int>  // Read-only public property
         get() = _grades.toList() // Immutable list
+//        set(list : List<Int>) {
+//            val grades = _grades + _grades.addAll(list)
+//        }
 
     fun addGrade(g: Int) {
         // grades.add(100) not possible if grades is val and immutable list
@@ -28,4 +31,5 @@ fun main() {
     // s.grades.add(600)
     // s.grades = listOf<Int>(0)
     println(s.grades)
+
 }
