@@ -1,9 +1,12 @@
 class Student2 {
+
     var grades = listOf<Int>()
     set(value) {
         field = value.filter { it in 1 .. 5 }
     }
 
+    val average
+        get() = grades.takeIf { it.isNotEmpty() }?.let { it.sum().toDouble() / it.size }
 }
 
 fun main() {
@@ -15,7 +18,8 @@ fun main() {
     println(ss.grades)
 
     ss.grades = listOf(1, 2, 5, 4) // OK
-    println(ss.grades)
+    ss.average
+    println("$ss.grades, $ss.average")
     ss.grades = listOf(1, 2, 5, 8) // OK
     println(ss.grades)
     ss.grades += listOf(3, 4) // OK
