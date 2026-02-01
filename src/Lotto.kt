@@ -37,6 +37,7 @@ fun main() {
 
         val result = tarkista(secret, guess)
 
+
         if (result == 7) {
             println("Oikea rivi löytyi!")
             println("Yrityksiä: $n")
