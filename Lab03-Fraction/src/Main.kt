@@ -1,7 +1,4 @@
-/*
-Victoria Vavulina
-2419829
- */
+import kotlin.math.abs
 
 data class Fraction(var numerator: Int, var denominator: Int, private val sign: Int = 1): Comparable<Fraction> {
 
@@ -13,8 +10,8 @@ data class Fraction(var numerator: Int, var denominator: Int, private val sign: 
 
     // Greatest common divisor
     private fun gcd(numerator: Int, denominator: Int): Int {
-        var x = kotlin.math.abs(numerator)
-        var y = kotlin.math.abs(denominator)
+        var x = abs(numerator)
+        var y = abs(denominator)
 
         while (y != 0) {
             val c = y
