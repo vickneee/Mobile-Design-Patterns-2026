@@ -1,8 +1,3 @@
-/*
-Victoria Vavulina
-2419829
- */
-
 // Luokkamäärittely:
 class Kahvinkeitin(val maxVesi: Int = 300, val maxKahvi: Int = 100) {
 
