@@ -27,6 +27,28 @@ data class Car(val maxSpeed: Double = 120.0, val gasolineCapacity: Double = 50.0
 }
 
 fun main() {
+    val c1 = Car()
+    val c2 = Car(120.0)
+    val c3 = Car(gasolineCapacity = 50.0)
+    val c4 = Car(120.0, 50.0)
+    val c5 = Car(maxSpeed = 110.0, gasolineCapacity = 30.0)
+    println("MaxSpeed ${c5.maxSpeed}")
+    println(c5.gasolineCapacity)
+
+    // c1.maxSpeed = 150.0 Can not reassign val properties
+
+    c1.fillTank()
+
+    for(i in 1..20) {
+        c1.accelerate()
+        c2.accelerate()
+        c3.accelerate()
+        c4.accelerate()
+        c5.accelerate()
+    }
+    while(c1.speed > 0) {
+        c1.decelerate()
+    }
     val car = Car()
 
     val resultRun = car.run {
