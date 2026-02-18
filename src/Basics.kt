@@ -62,6 +62,12 @@ fun main() {
 
     println(displayAlertMessage(thirdUserOperatingSystem, thirdUserEmailId))
     println()
+
+    // Pedometer steps to calories conversion
+    val steps = 4000
+    val caloriesBurned = pedometerStepsToCalories(steps)
+    println("Walking $steps steps burns $caloriesBurned calories")
+
 }
 
 fun add(first: Int, second: Int): Int {
@@ -74,4 +80,10 @@ fun subtract(first: Int, second: Int): Int {
 
 fun displayAlertMessage(os: String = "Unknown OS", emailId: String = "sample@gmail.com"): String {
     return "There's a new sign-in request on $os for your Google Account $emailId."
+}
+
+fun pedometerStepsToCalories(numberOfSteps: Int): Double {
+    val caloriesBurnedForEachStep = 0.04
+    val totalCaloriesBurned = numberOfSteps * caloriesBurnedForEachStep
+    return totalCaloriesBurned
 }
