@@ -71,6 +71,11 @@ fun main() {
     println(compareTwoNumbers(300, 250))
     println(compareTwoNumbers(300, 300))
     println(compareTwoNumbers(200, 220))
+
+    displayWeatherReport("Ankara", 27, 31, 82)
+    displayWeatherReport("Tokyo", 32, 36, 10)
+    displayWeatherReport("Cape Town", 59, 64, 2)
+    displayWeatherReport("Guatemala City", 50, 55, 7)
 }
 
 fun add(first: Int, second: Int): Int {
@@ -99,4 +104,11 @@ fun compareTwoNumbers(first: Int, second: Int): Boolean {
     } else {
         false
     }
+}
+
+fun displayWeatherReport(city: String, lowTemp: Int, highTemp: Int, changeOfRain: Int): Unit {
+    println("City: $city")
+    println("Low temperature: $lowTemp, High temperature: $highTemp")
+    println("Chance of rain: $changeOfRain%")
+    println()
 }
