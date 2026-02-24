@@ -24,8 +24,8 @@ fun teeGrade(alaraja: Double): (pisteet: Double) -> Int {
 }
 
 fun main() {
-    val examPoints = 78.93
-    val homeworkPoints = 100.0
+    val examPoints = 33.17
+    val homeworkPoints = 70.00
     val total = weightedTotal(examPoints, homeworkPoints) // 20% homework
     println("Weighted total points: %.2f".format(total))
 
