@@ -2,39 +2,37 @@ import kotlin.math.roundToInt
 
 // Parameter is function
 
-fun mapExample(lista: List<String>, jokuF: (s: String) -> String): List<String> {
-    val tulos = mutableListOf<String>()
-
-    for (e in lista) {
-        tulos.add(jokuF(e))
-    }
-    return tulos.toList()
+fun weightedTotal(examPoints: Double, homeworkPoints: Double, homeworkWeight: Double = 0.2): Double {
+    val examWeight = 1 - homeworkWeight
+    return examPoints * examWeight + homeworkPoints * homeworkWeight
 }
 
+
+// Convert total points to final grade (linear interpolation)
 fun arvo(pisteet: Double): Int {
-
     if (pisteet !in 40.0 .. 100.0) return 0
-
     val arvosana = 0.5 + (pisteet - 40.0) * 4.99 / 60
     return arvosana.roundToInt()
 }
 
+// Optional: create a grade function with custom lower bound
 fun teeGrade(alaraja: Double): (pisteet: Double) -> Int {
-
-    val f = { pisteet: Double ->
-        val arvosana = 0.5 + (pisteet - alaraja) * 4.99 / (alaraja + pisteet)
+    return { pisteet: Double ->
+        val arvosana = 0.5 + (pisteet - alaraja) * 4.99 / (100 - alaraja) // fixed formula
         arvosana.roundToInt()
     }
-    return f
 }
 
-// (pisteet: Double) -> Int
-
 fun main() {
-    // val s = mapExample(listOf("Abba", "Ace Of Base", "Metallica")) { s: String -> s.reversed() }
-    // println(s)
+    val examPoints = 78.93
+    val homeworkPoints = 100.0
+    val total = weightedTotal(examPoints, homeworkPoints) // 20% homework
+    println("Weighted total points: %.2f".format(total))
 
-    println(arvo(40.0))
+    val grade = arvo(total)
+    println("Final grade: $grade")
 
-    println(teeGrade(30.0))
+    // Using teeGrade function
+    val gradeFunction = teeGrade(40.0)
+    println("Final grade (teeGrade): ${gradeFunction(total)}")
 }
