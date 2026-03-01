@@ -87,13 +87,16 @@ fun main() {
     val groupedCrunchyMenu = groupedMenu[false] ?: listOf()
 
     println("Soft cookies:")
-    softBakedMenu.forEach {
+    groupedSoftBakedMenu.forEach {
         println("${it.name} - $${it.price}")
     }
     println("Crunchy cookies:")
     groupedCrunchyMenu.forEach {
         println("${it.name} - $${it.price}")
     }
+
+    // FOLD, An initial value.
+    // The fold() function is used to generate a single value from a collection.
 
 
 }
