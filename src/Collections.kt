@@ -55,5 +55,17 @@ fun main() {
 
     println(solarSystem.contains("Pluto"))
 
+    val solarSystemSet = mutableSetOf<String>("Mercury", "Venus", "Earth", "Mars")
+
+    println(solarSystemSet.size)
+    solarSystemSet.add("Pluto")
+
+    println(solarSystemSet.size)
+    println(solarSystemSet.contains("Pluto"))
+
+    solarSystemSet.remove("Pluto")
+
+    println(solarSystemSet.size)
+    println(solarSystemSet.contains("Pluto"))
 
 }
