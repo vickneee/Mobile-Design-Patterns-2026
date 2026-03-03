@@ -97,6 +97,17 @@ fun main() {
 
     // FOLD, An initial value.
     // The fold() function is used to generate a single value from a collection.
+    val totalPrice = cookies.fold(0.0) {total, cookie ->
+        total + cookie.price
+    }
 
+    println("Total price of all cookies: $${totalPrice}")
 
+    val alphabeticalMenu = cookies.sortedBy {
+        it.name
+    }
+    println("Alphabetical menu:")
+    alphabeticalMenu.forEach {
+        println(it.name)
+    }
 }
