@@ -7,7 +7,6 @@ fun weightedTotal(examPoints: Double, homeworkPoints: Double, homeworkWeight: Do
     return examPoints * examWeight + homeworkPoints * homeworkWeight
 }
 
-
 // Convert total points to final grade (linear interpolation)
 fun arvo(pisteet: Double): Int {
     if (pisteet !in 40.0 .. 100.0) return 0
@@ -24,7 +23,7 @@ fun teeGrade(alaraja: Double): (pisteet: Double) -> Int {
 }
 
 fun main() {
-    val examPoints = 75.00
+    val examPoints = .00
     val homeworkPoints = 100.00
     val total = weightedTotal(examPoints, homeworkPoints) // 20% homework
     println("Weighted total points: %.2f".format(total))
